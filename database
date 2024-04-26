@@ -1,0 +1,39 @@
+create table products(
+	id int Primary key,
+	name varchar(50),
+	brand varchar(50),
+	category varchar(50),
+	price float,
+	currency varchar(6),
+	description text,
+	availability BOOLEAN,
+	stock int,
+	weight int,
+	dimensions json,
+	features text[],
+	colors text[]
+);
+
+INSERT INTO products (
+	id, name, brand, category, price, currency, description, availability, stock, weight, dimensions)
+VALUES (
+	1, 'Akıllı Telefon', 'ABC', 'Elektronik', 999.99, 'TRY', 
+	'Yüksek performanslı akıllı telefon, güçlü işlemci ve uzun pil ömrüyle.', 
+	true, 50, 150, '{"width": 70, "height": 150, "depth": 7}');
+
+INSERT INTO product_features (product_id, feature) VALUES
+(1, '5.5 inç ekran'),
+(1, 'Octa-core işlemci'),
+(1, '8 GB RAM'),
+(1, '256 GB depolama alanı'),
+(1, '20 MP arka kamera'),
+(1, '8 MP ön kamera');
+
+INSERT INTO product_colors (product_id, color) VALUES
+(1, 'Siyah'),
+(1, 'Beyaz'),
+(1, 'Mavi');
+
+
+
+
